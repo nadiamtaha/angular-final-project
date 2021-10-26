@@ -1,0 +1,40 @@
+<ngx-spinner></ngx-spinner>
+
+<owl-carousel-o [options]="customOptions">
+
+    <ng-container *ngFor="let movie of trendingMovies">
+      <ng-template carouselSlide [id]="movie.id">
+        <img src="https://image.tmdb.org/t/p/original{{movie.poster_path}}">
+      </ng-template>
+    </ng-container>
+
+</owl-carousel-o>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <div class="smallBrdr"></div>
+            <h2 class="my-3">Trending <br>Movies<br> to watch now</h2>
+            <h6 class="my-3 most-watched">most watched movies by days</h6>
+            <div class="bigBrdr"></div>
+
+        </div>
+    </div>
+    <div *ngFor="let movie of trendingMovies" class="col-md-2 my-2">
+        <div>
+            <img class="w-100" src="https://image.tmdb.org/t/p/original{{movie.poster_path}}" alt="">
+            <h2   class="h6">{{movie.title}}</h2>
+            <button routerLink='/details/{{movie.id}}' class="btn btn-info text-white">details</button>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li (click)='getTrendingMovies(1)' class="page-item"><a class="page-link">1</a></li>
+          <li (click)='getTrendingMovies(2)' class="page-item"><a class="page-link">2</a></li>
+          <li (click)='getTrendingMovies(3)' class="page-item"><a class="page-link">3</a></li>
+        </ul>
+      </nav>
+    </div>
+</div>

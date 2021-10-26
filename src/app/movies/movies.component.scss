@@ -1,0 +1,13 @@
+@import '../../styles.scss';
+
+.most-watched{
+    color:$secondFontColor
+}
+.smallBrdr,.bigBrdr{
+    width:25%;
+    height: 1px;
+    background-color: $borderColor;
+}
+.bigBrdr{
+    width: 100%;
+}

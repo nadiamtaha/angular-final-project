@@ -1,0 +1,8 @@
+@import '../../styles.scss';
+
+.navbar{
+    background-color: $lightBgColor;
+    .nav-link,.navbar-brand{
+         color:$fontColor !important;
+    }
+}
